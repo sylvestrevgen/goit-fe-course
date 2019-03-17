@@ -1,0 +1,142 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Montserrat';
+    font-weight: normal;
+}
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    width: 1200px;
+    padding: 0 2px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.list {
+    list-style: none;
+}
+.link {
+    display: block;
+    text-decoration: none;
+}
+.button {
+    display: block;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: #ffffff; 
+    font-weight: bold;
+}
+.site-header {
+    padding: 28px 0 230px 0;
+    background-image: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%), url(../img/Banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 179px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    margin-right: 52px;
+    min-width: 506px;
+}
+.menu__link {
+    position: relative;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.menu__link::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -12px;
+    width: 100%;
+    height: 3px;
+    transform: scale(0); 
+    background-color: #fce38a;
+}
+.menu__link:hover {
+    color: #fce38a;
+}
+.menu__link:hover::after {
+    transform: scale(1); 
+}
+.buy-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -2px;
+}
+.buy-search__buy-link {
+    width: 18px;
+    height: 18px;
+    margin-right: 42px;
+}
+.buy-search__search-link {
+    width: 18px;
+    height: 18px;
+}
+.buy-search__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header-titles {
+    color: #ffffff;
+    margin-bottom: 124px;
+}
+.header-titles__subtitle {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'KaushanScript';
+    font-size: 72px;
+    margin-bottom: 50px;
+}
+.header-titles__title {
+    padding: 0 100px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150px;
+    line-height: 140px;
+    text-transform: uppercase;
+}
+.header-button {
+    border: 3px solid #ffffff;
+    margin: 0 auto;
+    padding: 15px 32px;
+}
+
+
+@media (min-resolution: 192dpi) {
+    .site-header {
+        background-image: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%), url(../img/Banner@2x.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;    
+    }
+}

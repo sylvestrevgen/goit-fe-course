@@ -1,0 +1,19 @@
+.subscribe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  &__button {
+    @extend %button;
+    padding: 14px 34px;
+    width: 150px;
+    background-color: $item-bg-color;
+    -webkit-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: $item-bg-accent;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.buy-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: -2px;
+
+  &__buy-link {
+    @extend %link;
+    width: 18px;
+    height: 18px;
+    margin-right: 42px;
+  }
+
+  &__search-link {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: $link-fill-color;
+    -webkit-transition: fill 0.2s linear;
+    -o-transition: fill 0.2s linear;
+    transition: fill 0.2s linear;
+
+    &:hover {
+      fill: $main-accent;
+    }
+  }
+}

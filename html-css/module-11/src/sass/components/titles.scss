@@ -1,0 +1,33 @@
+.subtitle {
+  font-family: $subtitle-font;
+  margin: 0;
+}
+
+.title {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.main-subtitle {
+  margin-bottom: 22px;
+  font-size: 24px;
+  text-align: center;
+  color: $main-text-color;
+}
+
+.main-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: $main-text-color;
+  
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 60px;
+    height: 3px;
+    background-color: $other-accent;
+  }
+}

@@ -1,0 +1,20 @@
+.header-titles {
+  color: $link-fill-color;
+  margin-bottom: 124px;
+
+  &__subtitle {
+    padding: 0;
+    text-align: center;
+    font-size: 72px;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    padding: 0 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150px;
+    line-height: 140px;
+  }
+}
+

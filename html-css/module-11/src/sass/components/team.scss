@@ -1,0 +1,157 @@
+.team {
+  padding-bottom: 82px;
+}
+
+.team-titles {
+  margin-bottom: 92px;
+
+  &__caption {
+    margin: 0 auto;
+    text-align: center;
+    width: 954px;
+  }
+
+  &__title {
+    margin-bottom: 46px;
+  }
+}
+
+.team-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  &__item {
+    -ms-flex-preferred-size: 380px;
+    flex-basis: 380px;
+
+    &:hover > .team-cards__image-container {
+      -webkit-transform: translate(-10px, -10px);
+      -ms-transform: translate(-10px, -10px);
+      transform: translate(-10px, -10px);
+      -webkit-box-shadow: 10px 10px 0px 0px $item-bg-color;
+      box-shadow: 10px 10px 0px 0px $item-bg-color;
+    }
+
+    &:hover .team-cards__layout {
+      opacity: 1;
+    }
+
+    &:hover .team-cards__socials {
+      opacity: 1;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    margin-bottom: 30px;
+    -webkit-transform: translateX(0), translateY(0);
+    -ms-transform: translateX(0), translateY(0);
+    transform: translateX(0), translateY(0);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: -webkit-transform 0.3s linear,
+      -webkit-box-shadow 0.3s linear;
+    transition: -webkit-transform 0.3s linear, -webkit-box-shadow 0.3s linear;
+    -o-transition: transform 0.3s linear, box-shadow 0.3s linear;
+    transition: transform 0.3s linear, box-shadow 0.3s linear;
+    transition: transform 0.3s linear, box-shadow 0.3s linear,
+      -webkit-transform 0.3s linear, -webkit-box-shadow 0.3s linear;
+  }
+
+  &__layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(252, 227, 138, 0.9)),
+      to(rgba(243, 129, 129, 0.9))
+    );
+    background-image: -webkit-linear-gradient(
+      bottom,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%
+    );
+    background-image: -o-linear-gradient(
+      bottom,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%
+    );
+    background-image: linear-gradient(
+      to top,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%
+    );
+    opacity: 0;
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+  }
+
+  &__socials {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+  }
+
+  &__icon {
+    @extend %link;
+    width: 56px;
+    height: 56px;
+    padding: 15px;
+    background-color: $main-accent;
+    -webkit-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba(243, 129, 129, 0.5);
+    }
+
+    &:hover {
+      background-color: $other-accent;
+    }
+
+    &:hover .team-cards__svg {
+      fill: $link-fill-color;
+    }
+  }
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    fill: $other-accent;
+    -webkit-transition: fill 0.3s linear;
+    -o-transition: fill 0.3s linear;
+    transition: fill 0.3s linear;
+  }
+
+  &__name {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  &__job {
+    font-style: italic;
+    text-align: center;
+  }
+}

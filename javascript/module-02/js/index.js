@@ -18,9 +18,7 @@ while (true) {
     numbers.push(input);
   }
 }
-if (numbers.length < 1) {
-  alert("Массив пустой, невозможно посчитать сумму!");
-} else {
+if (numbers.length > 0) {
   for (const number of numbers) {
     total = total + number;
   }
@@ -43,16 +41,13 @@ do {
     //проверка на правильный пароль
     alert("Добро пожаловать!");
     break;
-  } else {
-    attemptsLeft -= 1;
-
-    if (attemptsLeft >= 1) {
-      //условие для того, чтобы не появлялось сообщение "У вас осталось 0 попыток"
-      alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
-    }
   }
-} while (attemptsLeft !== 0);
+  attemptsLeft -= 1;
 
-if (attemptsLeft === 0) {
-  alert("У вас закончились попытки, аккаунт заблокирован!");
-}
+  if (attemptsLeft !== 0) {
+    //условие для того, чтобы не появлялось сообщение "У вас осталось 0 попыток"
+    alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
+  } else {
+    alert("У вас закончились попытки, аккаунт заблокирован!");
+  }
+} while (attemptsLeft > 0);

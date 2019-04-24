@@ -12,15 +12,15 @@ while (true) {
     break;
   }
   input = Number(input);
-  if (Number.isNaN(input) === true) {
+  if (Number.isNaN(input)) {
     alert("Было введено не число, попробуйте ещё раз!");
   } else {
     numbers.push(input);
   }
 }
-if (numbers.length > 0) {
+if (numbers.length) { // if (numbers.length > 0)
   for (const number of numbers) {
-    total = total + number;
+    total += number;
   }
   console.log(`Общая сумма чисел равна ${total}.`);
 }
@@ -44,10 +44,10 @@ do {
   }
   attemptsLeft -= 1;
 
-  if (attemptsLeft !== 0) {
+  if (attemptsLeft) { //if (attemptsLeft !== 0)
     //условие для того, чтобы не появлялось сообщение "У вас осталось 0 попыток"
     alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
   } else {
     alert("У вас закончились попытки, аккаунт заблокирован!");
   }
-} while (attemptsLeft > 0);
+} while (attemptsLeft); //while (attemptsLeft > 0)

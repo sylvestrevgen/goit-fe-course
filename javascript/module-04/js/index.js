@@ -28,7 +28,7 @@ const notepad = {
   },
   saveNote(note) {
     this.notes.push(note);
-    return this.notes[this.notes.indexOf(note)];
+    return note;
     /*
      * Сохраняет заметку в массив notes
      *
@@ -38,7 +38,7 @@ const notepad = {
   },
   deleteNote(id) {
     for(const note of this.notes) {
-      if(note.id === id) {
+      if(this.findNoteById(id) === true) {
         this.notes.splice(this.notes.indexOf(note), 1);
       }
     }
@@ -51,7 +51,7 @@ const notepad = {
   },
   updateNoteContent(id, updatedContent) {
     for(const note of this.notes) {
-      if(note.id === id) {
+      if(this.findNoteById(id) === true) {
         Object.assign(note, updatedContent);
         return note;
       }
@@ -67,7 +67,7 @@ const notepad = {
   },
   updateNotePriority(id, priority) {
     for(const note of this.notes) {
-      if(note.id === id) {
+      if(this.findNoteById(id) === true) {
         note.priority = priority;
         return note;
       }

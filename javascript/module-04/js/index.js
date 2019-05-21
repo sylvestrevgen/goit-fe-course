@@ -37,11 +37,9 @@ const notepad = {
      */
   },
   deleteNote(id) {
-    for(const note of this.notes) {
-      if(this.findNoteById(id) === true) {
-        this.notes.splice(this.notes.indexOf(note), 1);
-      }
-    }
+    const note = this.findNoteById(id);
+    this.notes.splice(this.notes.indexOf(note), 1);
+    
     /*
      * Удаляет заметку по идентификатору из массива notes
      *
@@ -50,12 +48,11 @@ const notepad = {
      */
   },
   updateNoteContent(id, updatedContent) {
-    for(const note of this.notes) {
-      if(this.findNoteById(id) === true) {
-        Object.assign(note, updatedContent);
-        return note;
-      }
-    }
+    const note = this.findNoteById(id);
+    Object.assign(note, updatedContent);
+    return note;
+      
+    
     /*
      * Обновляет контент заметки
      * updatedContent - объект с полями вида {имя: значение, имя: значение}
@@ -66,12 +63,11 @@ const notepad = {
      */
   },
   updateNotePriority(id, priority) {
-    for(const note of this.notes) {
-      if(this.findNoteById(id) === true) {
-        note.priority = priority;
-        return note;
-      }
-    }
+    const note = this.findNoteById(id);
+    note.priority = priority;
+    return note;
+      
+    
     /*
      * Обновляет приоритет заметки
      *

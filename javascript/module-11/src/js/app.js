@@ -34,7 +34,7 @@ const handleFormSubmit = event => {
   domRefs.form.reset();
 
   // addListItem(domRefs.noteList, noteObj);
-  const markup = createNoteListItems(initialNotes);
+  const markup = createNoteListItems(notepad.notes);
   domRefs.noteList.innerHTML = markup;
 
   // NOTYF 

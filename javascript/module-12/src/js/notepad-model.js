@@ -82,9 +82,4 @@ export default class Notepad {
   get notes() {
     return this._notes;
   }
-
-  set notes(newNotes) {
-    this._notes = newNotes;
-    return this._notes;
-  }
 }

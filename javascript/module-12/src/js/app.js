@@ -7,8 +7,12 @@ import MicroModal from "micromodal";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
-// INIT NOTEPAD
-const notepad = new Notepad(initialNotes);
+// INIT NOTEPAD WITH INITIAL NOTES OR STORAGE NOTES
+
+const storageNotes = storage.load("notes");
+const initNotes = storageNotes ? storageNotes : initialNotes;
+
+const notepad = new Notepad(initNotes);
 
 // INIT NOTYF
 const notyf = new Notyf();
@@ -32,7 +36,6 @@ const handleFormSubmit = event => {
 
   notepad.saveNote(noteObj)
     .then(savedNote => {
-      storage.remove("notes");
       storage.save("notes", notepad.notes);
       storage.remove("new-note-title");
       storage.remove("new-note-body");
@@ -56,7 +59,6 @@ const handleDeleteNote = event => {
 
     notepad.deleteNote(parentNode.dataset.id)
       .then(() => {
-        storage.remove("notes");
         storage.save("notes", notepad.notes);
 
         const markup = createNoteListItems(notepad.notes);
@@ -98,18 +100,8 @@ domRefs.openModalButton.addEventListener("click", handleOpenModal);
 domRefs.form.addEventListener("keyup", handleKeyNewNote);
 
 // CREATE AND RENDER NOTES
-const storageNotes = storage.load("notes");
-
-// IF IS NOTES IN STORAGE OR NOT
-if (storageNotes) {
-  notepad.notes = storageNotes;
-
-  const markup = createNoteListItems(storageNotes);
-  domRefs.noteList.innerHTML = markup;
-} else {
-  const markup = createNoteListItems(initialNotes);
-  domRefs.noteList.innerHTML = markup;
-}
+const markup = createNoteListItems(notepad.notes);
+domRefs.noteList.innerHTML = markup;
 
 // RENDER FORM WITH STORAGE DATA
 const storageNoteTitle = storage.load("new-note-title");
